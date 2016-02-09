@@ -56,7 +56,10 @@ var besloi = (function(){
 
         var tc= 0, maxtry = maxtry || 2;
         var delay = isNaN(parseInt(delay)) ? 5000 : parseInt(delay);
-
+        
+        var oAssgnMeta = $("[data-js='submission-header']");
+        console.log("BesLoi>> Reviewing " + oAssgnMeta.find("[data-js='title']").text());
+        
         var repeatCounter = setInterval(function() {
             tc++;
 	        var bNoSubmissionAvailable = ($("[data-rc='GiveFeedbackNoList'] .body-2-text").text() === "No Submissions Available");
@@ -65,6 +68,7 @@ var besloi = (function(){
 		        clearInterval(repeatCounter);
 		        console.log("-=BesLoi=->> Done! Total Reviewed Assignments = " + (--tc));
 	        } else {
+                console.log("#" + tc + " >> " + oAssgnMeta.find("[data-js='creator-name']").text() + ", Submission Date: " + oAssgnMeta.find("[data-js='submission-date']").text());
 		        besloi_process();
 	        }
         }, delay);
