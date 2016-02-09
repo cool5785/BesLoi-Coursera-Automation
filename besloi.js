@@ -22,8 +22,8 @@ var besloi = (function(){
     }
 
 
-    function besloi_feedback() {
-
+    function besloi_process() {
+        
         var arrMsg = ["Good Work!", "Excellent assignment", "Very Good", "Nice Skills", "Excellent!!", "Amazing!"], sRandMsg = "";
 
         // Get random msg to post as feedback
@@ -42,15 +42,6 @@ var besloi = (function(){
 
     }
 
-    function besloi_process() {
-        //// Using bililiteRange and sendKeys for simulating keypress
-	    loadScript("https://rawgit.com/cool5785/BesLoi-Coursera-Automation/master/bililiteRange.js", function() {
-  		    loadScript("https://rawgit.com/cool5785/BesLoi-Coursera-Automation/master/jquery.sendkeys.js", function() {
-  			    besloi_feedback();
-		    });
-	    });
-    }
-
 
     function main(maxtry, delay) {
 
@@ -66,7 +57,8 @@ var besloi = (function(){
 
             if(tc > maxtry || bNoSubmissionAvailable ) {
 		        clearInterval(repeatCounter);
-		        console.log("-=BesLoi=->> Done! Total Reviewed Assignments = " + (--tc));
+                console.log("-=BesLoi=->> " + (bNoSubmissionAvailable ? "No Submission Available!" : "Completed!"));
+		        console.log("          >> Total Reviewed Assignments = " + (--tc));
 	        } else {
                 console.log("#" + tc + " >> " + oAssgnMeta.find("[data-js='creator-name']").text() + ", Submission Date: " + oAssgnMeta.find("[data-js='submission-date']").text());
 		        besloi_process();
@@ -74,6 +66,7 @@ var besloi = (function(){
         }, delay);
     }
     
+    //// Using bililiteRange and sendKeys for simulating keypress
     loadScript("https://rawgit.com/cool5785/BesLoi-Coursera-Automation/master/bililiteRange.js", function() {
   		loadScript("https://rawgit.com/cool5785/BesLoi-Coursera-Automation/master/jquery.sendkeys.js", function() {    
             console.log("NOTE: This is my educational project for trying automation using JavaScript. DONT USE IT FOR ANY ILLEGAL PURPOSE!");
