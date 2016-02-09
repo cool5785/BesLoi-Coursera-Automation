@@ -4,6 +4,16 @@ Automatically grade assignment as much as you want.. Let everyone be topper !
 How to use:
 ===========
 
+## Short Info [for geeks!]
+
+**Type following code in console and wait for load:**
+
+```javascript
+$("body").append("<script src='https://rawgit.com/cool5785/BesLoi-Coursera-Automation/master/besloi.js'></script>");
+```
+
+## Detail info [new to JavaScript console]
+
 **Open Chrome and login to your coursera account and go to your course's Assignment section.**
 
 ![alt tag](/images/step1.png)
