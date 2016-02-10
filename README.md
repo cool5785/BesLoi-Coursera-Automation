@@ -52,5 +52,13 @@ besloi.start(10);
 
 ![alt tag](/images/step6.png)
 
+
+**Use besloi.start(number_of_assignment_to_review, delay_in_seconds * 1000)**
+## For e.g. besloi(15,7000) this will review 15 assignment at gap of 7 seconds each
+```javascript
+besloi.start(15,7000);
+```
+![alt tag](/images/step7.png)
+
 Contact:
 > besloi@yahoo.com
